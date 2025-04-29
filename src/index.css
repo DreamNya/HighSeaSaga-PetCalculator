@@ -1,0 +1,126 @@
+:root {
+    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light dark;
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* 设置整个滚动条的样式 */
+::-webkit-scrollbar {
+    width: 8px; /* 设置滚动条的宽度 */
+}
+
+/* 设置滚动条轨道 */
+::-webkit-scrollbar-track {
+    background: transparent; /* 设置轨道为透明 */
+}
+
+/* 设置滚动条的滑块（thumb） */
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1); /* 设置滑块为半透明黑色 */
+    border-radius: 6px; /* 设置滑块的圆角 */
+}
+
+/* 设置滑块在悬停或活动时的样式 */
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3); /* 设置滑块在悬停状态下的背景颜色 */
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+
+    scrollbar-gutter: stable;
+}
+
+h1 {
+    font-size: 3.2em;
+    line-height: 1.1;
+}
+
+button:focus,
+button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+}
+
+.ant-select-selection-item {
+    margin-left: 15px;
+}
+
+.bold .ant-select-selection-item {
+    font-weight: 700;
+}
+
+.small {
+    font-size: 0.8em;
+}
+
+.ant-statistic-content-value {
+    font-size: clamp(12px, 16px, 18px); /* TODO */
+    font-weight: 600;
+    word-break: keep-all;
+    width: 100%;
+}
+
+button.ant-btn-icon-only:hover {
+    border: 1px solid #646cff !important;
+}
+
+.d-none {
+    display: none !important;
+}
+
+.color {
+    font-weight: 600;
+    & .ant-statistic-title {
+        color: inherit;
+        opacity: 0.8;
+        font-weight: 400;
+    }
+    & .ant-statistic-content,
+    & .ant-statistic-content-value {
+        color: inherit;
+    }
+}
+.color-green {
+    color: #52ff46;
+}
+.color-red {
+    color: #ff7474;
+}
+.color-blue {
+    color: #85d1ff;
+}
+.color-purple {
+    color: #c98aff;
+}
+.color-yellow {
+    color: #ffff00;
+}
+.color-black {
+    color: #c2c2c2;
+}
+
+tbody {
+    line-height: 28px;
+}
+
+div.ant-typography {
+    text-indent: 2em;
+}
+
+div.ant-typography li,
+div.ant-typography .ant-steps {
+    text-indent: 0;
+}

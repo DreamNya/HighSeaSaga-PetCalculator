@@ -1,0 +1,23 @@
+#root {
+    margin: 0;
+    text-align: center;
+}
+
+.logo {
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ant-input-number-group-addon {
+    background-color: var(--color);
+    color: #dee2e6;
+}
+
+.ant-input-number-input {
+    border: 1px solid var(--color);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-left: -1px;
+}
