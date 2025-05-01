@@ -50,8 +50,8 @@ _由于缺少足够资料、工程量过大，本项目计划只专注于宠物�
 
 ## 示例
 
-![1](example/1.jpeg)
-![1.5](example/1.5.jpeg)
-![2](example/2.jpeg)
-![3](example/3.jpeg)
-![4](example/4.jpeg)
+![1](example/1.jpg)
+![2](example/2.jpg)
+![3](example/3.jpg)
+![4](example/4.jpg)
+![5](example/5.jpg)
