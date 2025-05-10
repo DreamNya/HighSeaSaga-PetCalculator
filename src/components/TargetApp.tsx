@@ -115,6 +115,7 @@ const TargetApp: React.FC = () => {
     const { token } = theme.useToken();
     const dispatch = useDispatch();
     const { targetPet, solutions, errorText }: PetState = useSelector((state) => state.PetStore);
+    const { colorMax } = useSelector((state) => state.EggStore);
 
     const show = solutions.length > 0;
 
@@ -279,7 +280,12 @@ const TargetApp: React.FC = () => {
                             </span>
                         );
                     }),
-                    ...color,
+                    ...(Object.fromEntries(
+                        Object.entries(color).map(([colorName, colorValue]) => [
+                            colorName,
+                            Math.min(colorValue, colorMax),
+                        ]),
+                    ) as colorNames),
                 }))}
             />
         </Card>

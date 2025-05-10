@@ -124,3 +124,15 @@ div.ant-typography li,
 div.ant-typography .ant-steps {
     text-indent: 0;
 }
+
+.ant-typography.ant-typography-disabled {
+    cursor: default;
+}
+
+ul.ChangeLog li {
+    margin: 10px 0;
+}
+
+.ant-rate-disabled.ant-rate .ant-rate-star {
+    cursor: not-allowed;
+}

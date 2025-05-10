@@ -6,6 +6,7 @@ interface EggState extends Item {
     colorMax: number;
     fillTimes: number;
     maxSolutions: number;
+    starUp: number;
 }
 
 export const EggStore = createSlice({
@@ -19,16 +20,23 @@ export const EggStore = createSlice({
         black: 0,
         star: 1,
         colorMax: 100,
-        fillTimes: 3,
+        fillTimes: 5,
         maxSolutions: 500,
+        starUp: 0,
     } as EggState,
     reducers: {
         changeBasic: (state, action) => {
-            if (action.payload.star) {
-                const star = action.payload.star;
+            if ('star' in action.payload) {
+                const { star } = action.payload;
+                action.payload.starUp = 0;
                 state.colorMax = Math.min(100 * star, 500);
                 action.payload.fillTimes = star == 6 ? 12 : 4 + star;
+            } else if ('starUp' in action.payload) {
+                const { starUp } = action.payload;
+                const { star } = state;
+                state.colorMax = Math.min(100 * (star + starUp), 500);
             }
+
             Object.assign(state, action.payload);
             console.log(action);
         },

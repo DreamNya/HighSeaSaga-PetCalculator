@@ -8,7 +8,7 @@ export const CalcSolutions = () => {
     // 清除原有错误
     store.dispatch(throwError(''));
     // 剩余投喂次数、颜色上限、计算结果个数
-    const { fillTimes, colorMax, maxSolutions } = Store.EggStore;
+    const { fillTimes, colorMax, maxSolutions, starUp } = Store.EggStore;
     // 孵化目标
     const TargetPet = Store.PetStore.targetPet;
     if (TargetPet.name == '波波洛利') {
@@ -34,7 +34,13 @@ export const CalcSolutions = () => {
     // 蛋基础颜色
     const EggBaseColor = (() => {
         const { green, blue, yellow, red, purple, black } = Store.EggStore;
-        return { green, blue, yellow, red, purple, black, time: 0 };
+        return Object.entries({ green, blue, yellow, red, purple, black }).reduce(
+            (acc, [key, value]) => {
+                acc[key as keyof Item] = value + 20 * starUp;
+                return acc;
+            },
+            { time: 0 } as Item,
+        );
     })();
 
     // 结果
@@ -89,7 +95,7 @@ export const CalcSolutions = () => {
                     }
                 }
                 const totalColors = sumColor([...currentSelection, EggBaseColor]);
-                const validPet = validPets(totalColors);
+                const validPet = validPets(totalColors, colorMax);
                 // 满足范围后 返回解
                 if (validPet.includes(TargetPet.name)) {
                     solutions.push({

@@ -1,5 +1,5 @@
 import { GithubOutlined, InfoCircleOutlined, QuestionCircleOutlined } from '@ant-design/icons';
-import { Button, Flex, Modal, Steps, Tooltip, Typography } from 'antd';
+import { Button, Flex, Modal, Steps, Tag, Tooltip, Typography } from 'antd';
 import { useState } from 'react';
 
 const { Title, Paragraph, Link, Text } = Typography;
@@ -91,6 +91,20 @@ const HeaderApp: React.FC = () => {
                                     ]}
                                 />
                             </Paragraph>
+                            <Title level={2}>才能提升药(v0.1.1)</Title>
+                            <Paragraph>
+                                现支持设置额外才能提升药提升蛋星级，最大支持使用（5-星级）个才能提升药，计算结果时会自动计算对应属性，无需手动修改蛋基础属性
+                            </Paragraph>
+                            <Paragraph>
+                                <Text disabled style={{ fontSize: 13 }}>
+                                    用法可参考
+                                    <Link
+                                        href="https://github.com/DreamNya/HighSeaSaga-PetCalculator/tree/main/example"
+                                        target="_blank">
+                                        GitHub仓库示例6~7
+                                    </Link>
+                                </Text>
+                            </Paragraph>
                             <Title level={2}>孵化方案</Title>
                             <Title level={5}>游戏基础概念本文不再赘述，建议查询相关资料攻略</Title>
                             <Paragraph>
@@ -115,7 +129,12 @@ const HeaderApp: React.FC = () => {
                             </Paragraph>
                             <Paragraph>
                                 <Text disabled style={{ fontSize: 13 }}>
-                                    具体算法详见源码：src/script/CalcSolutions.ts
+                                    具体算法详见源码：
+                                    <Link
+                                        href="https://github.com/DreamNya/HighSeaSaga-PetCalculator/blob/main/src/script/CalcSolutions.ts"
+                                        target="_blank">
+                                        src/script/CalcSolutions.ts
+                                    </Link>
                                 </Text>
                             </Paragraph>
                         </Typography>
@@ -174,6 +193,18 @@ const HeaderApp: React.FC = () => {
                             由于缺少足够资料、工程量过大，本项目计划只专注于宠物计算器。如有更好的建议可在 GitHub 发起
                             Issue
                         </Text>
+                    </Paragraph>
+                    <Title level={2}>更新记录</Title>
+                    <Paragraph>
+                        <Text style={{ fontSize: 20, fontWeight: 600 }}>v0.1.1</Text>
+                        <ul className="ChangeLog">
+                            <li>
+                                <Tag color="#2db7f5">功能</Tag>现支持设置额外才能提升药
+                            </li>
+                            <li>
+                                <Tag color="#F44336">修复</Tag>孵化计算结果颜色不再超出蛋星级对应的颜色上限
+                            </li>
+                        </ul>
                     </Paragraph>
                 </Modal>
             </Flex>

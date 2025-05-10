@@ -62,13 +62,14 @@ export const sumColor = (arr: Array<Item>) => {
     );
 };
 
-export const validPets = (colorValue: Record<keyof Pet['colors'], number>) => {
+export const validPets = (colorValue: Record<keyof Pet['colors'], number>, colorMax: number) => {
     const possiblePets = Object.values(pets)
         // 去除必定可能的波波洛利
         .slice(1)
         .reduce((arr, { name, colors }) => {
             const valid = (Object.keys(Colors) as Array<color>).every((color) => {
-                return colorValue[color] >= colors[color]?.min && colorValue[color] <= colors[color]?.max;
+                const realValue = Math.min(colorValue[color], colorMax);
+                return realValue >= colors[color]?.min && realValue <= colors[color]?.max;
             });
             if (valid) {
                 arr.push(name);
