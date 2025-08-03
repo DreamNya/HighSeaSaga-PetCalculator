@@ -185,7 +185,7 @@ const HeaderApp: React.FC = () => {
                     </Typography>
                     <Paragraph>
                         <Text disabled style={{ fontSize: 13 }}>
-                            目前项目已完成完成算法代码、基本界面、交互UI、简单物品及宠物图鉴。未做响应式适配，低分辨率设备访问可能效果较差。
+                            目前项目已完成算法代码、基本界面、交互UI、简单物品及宠物图鉴。未做响应式适配，低分辨率设备访问可能效果较差。
                         </Text>
                     </Paragraph>
                     <Paragraph>
