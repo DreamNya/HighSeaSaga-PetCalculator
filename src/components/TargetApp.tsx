@@ -95,10 +95,10 @@ function TargetStat(targetPet: Pet) {
             </Col>
             {(Object.entries(Colors) as Array<[color, string]>).map(([color, name]) => {
                 const { min, max } = targetPet.colors[color];
-                const isVaild = min <= 500;
+                const isValid = min <= 500;
                 const isInfinite = min == -999 && max == 999;
 
-                const colorRange = !isVaild ? '∞' : isInfinite ? '-' : `${min}~${max}`.replace('-999', '0');
+                const colorRange = !isValid ? '∞' : isInfinite ? '-' : `${min}~${max}`.replace('-999', '0');
                 return (
                     <Col span={3} key={color}>
                         <Statistic title={name} value={colorRange} className={`color color-${color}`} />
