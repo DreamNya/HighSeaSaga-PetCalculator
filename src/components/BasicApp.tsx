@@ -33,8 +33,12 @@ const BasicApp: React.FC = () => {
                                     <InputNumber
                                         addonBefore={name}
                                         placeholder="0"
-                                        onChange={(value) => {
-                                            dispatch(changeBasic({ [color]: value }));
+                                        onChange={(value: number | null) => {
+                                            dispatch(
+                                                changeBasic({
+                                                    [color]: value ?? 0,
+                                                }),
+                                            );
                                         }}
                                         style={{ '--color': color }}
                                     />
@@ -121,7 +125,11 @@ const BasicApp: React.FC = () => {
                                 max={12}
                                 min={1}
                                 onChange={(value: number | null) => {
-                                    dispatch(changeBasic({ fillTimes: value }));
+                                    dispatch(
+                                        changeBasic({
+                                            fillTimes: value ?? 0,
+                                        }),
+                                    );
                                 }}
                                 style={{ '--color': 'black' }}
                             />
